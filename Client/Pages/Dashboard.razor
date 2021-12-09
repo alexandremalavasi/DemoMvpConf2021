@@ -1,0 +1,40 @@
+﻿@page "/"
+@inject HttpClient _httpClient
+@attribute [Authorize]
+
+<h1>Payment Report</h1>
+
+    <Chart Data="_chartData" Type="bar" />
+
+
+@code { ChartData _chartData = new ChartData();
+
+            protected override async Task OnInitializedAsync()
+            {
+                var participants = await _httpClient.GetFromJsonAsync<List<ParticipantModel>>("/api/participants");
+                CreateChartData(participants);
+            }
+
+            private void CreateChartData(List<ParticipantModel> repairs)
+            {
+                var confirmedParticipants = repairs.Count(x => x.PaymentConfirmed);
+                var pendingParticipants = repairs.Count(x => !x.PaymentConfirmed);
+
+                _chartData.Labels.Add("Payment Confirmed");
+                _chartData.Labels.Add("Payment Pending");
+
+                var dataSet = new DataSet();
+                dataSet.Label = "Payment Status";
+                dataSet.BorderWidth = 1;
+
+                dataSet.Data.Add(confirmedParticipants);
+                dataSet.Data.Add(pendingParticipants);
+
+                dataSet.BackgroundColor.Add("green");
+                dataSet.BackgroundColor.Add("red");
+
+                dataSet.BorderColor.Add("green");
+                dataSet.BorderColor.Add("red");
+
+                _chartData.Datasets.Add(dataSet);
+            } }

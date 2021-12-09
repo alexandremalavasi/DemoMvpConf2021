@@ -1,0 +1,50 @@
+﻿@page "/participants"
+@inject HttpClient _httpClient
+@attribute [Authorize]
+
+<h3>Participants</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Job title</th>
+            <th>Email</th>
+            <th>Payment Confirmed</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in _participants)
+        {
+        <tr>
+    <td>@item.Name</td>
+    <td>@item.JobTitle</td>
+    <td>
+    
+        <AuthorizeView Roles="Admin">
+            <Authorized>
+               @item.Email
+            </Authorized>
+            <NotAuthorized>
+ 
+                    <p>You do not have permissions to view this info</p>
+              
+            </NotAuthorized>
+        </AuthorizeView>
+    
+    
+    
+    </td>
+    <td>@(item.PaymentConfirmed ? "Yes" : "No")</td>
+</tr>}
+    </tbody>
+</table>
+
+@code {
+    List<ParticipantModel> _participants = new List<ParticipantModel>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        _participants = await _httpClient.GetFromJsonAsync<List<ParticipantModel>>("/api/participants");
+    }
+}

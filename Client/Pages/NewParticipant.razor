@@ -1,0 +1,49 @@
+﻿@page "/participant/new"
+@inject HttpClient _httpClient
+
+<h1>New Participant</h1>
+
+@if (_showSuccess)
+{
+<blockquote>
+    <strong>New Participant Saved Successfully!</strong>
+</blockquote>}
+
+<EditForm Model="_participantModel" OnValidSubmit="HandleFormSubmit">
+    <DataAnnotationsValidator />
+
+    <div class="form-group">
+        <label for="name">Name</label>
+        <InputText id="name" type="text" class="form-control" @bind-Value="_participantModel.Name" />
+        <ValidationMessage For="() => _participantModel.Name" />
+    </div>
+
+    <div class="form-group">
+        <label for="jobtitle">Job Title</label>
+        <InputTextArea id="jobtitle" class="form-control" type="text" @bind-Value="_participantModel.JobTitle" />
+        <ValidationMessage For="() => _participantModel.JobTitle" />
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email</label>
+        <InputText id="email" class="form-control" type="email" @bind-Value="_participantModel.Email" />
+        <ValidationMessage For="() => _participantModel.Email" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+</EditForm>
+
+@code { ParticipantModel _participantModel = new ParticipantModel();
+            bool _showSuccess = false;
+
+            private async Task HandleFormSubmit()
+            {
+                var content = new StringContent(JsonSerializer.Serialize(_participantModel), Encoding.UTF8, "application/json");
+                var response = await _httpClient.PostAsync("/api/participants", content);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    _showSuccess = true;
+                    _participantModel = new ParticipantModel();
+                }
+            } }

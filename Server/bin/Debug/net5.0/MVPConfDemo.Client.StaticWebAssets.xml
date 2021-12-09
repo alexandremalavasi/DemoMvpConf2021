@@ -1,0 +1,4 @@
+﻿<StaticWebAssets Version="1.0">
+  <ContentRoot BasePath="/" Path="C:\Users\Alexandre Malavasi\Desktop\MVPConfDemo\Client\bin\Debug\net5.0\wwwroot\" />
+  <ContentRoot BasePath="/" Path="C:\Users\Alexandre Malavasi\Desktop\MVPConfDemo\Client\obj\Debug\net5.0\scopedcss\bundle\" />
+</StaticWebAssets>

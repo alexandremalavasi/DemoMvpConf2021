@@ -1,0 +1,12 @@
+C:\Users\Alexandre Malavasi\source\repos\MVPConfDemo\Shared\bin\Debug\net5.0\MVPConfDemo.Shared.deps.json
+C:\Users\Alexandre Malavasi\source\repos\MVPConfDemo\Shared\bin\Debug\net5.0\MVPConfDemo.Shared.dll
+C:\Users\Alexandre Malavasi\source\repos\MVPConfDemo\Shared\bin\Debug\net5.0\ref\MVPConfDemo.Shared.dll
+C:\Users\Alexandre Malavasi\source\repos\MVPConfDemo\Shared\bin\Debug\net5.0\MVPConfDemo.Shared.pdb
+C:\Users\Alexandre Malavasi\source\repos\MVPConfDemo\Shared\obj\Debug\net5.0\MVPConfDemo.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Alexandre Malavasi\source\repos\MVPConfDemo\Shared\obj\Debug\net5.0\MVPConfDemo.Shared.AssemblyInfoInputs.cache
+C:\Users\Alexandre Malavasi\source\repos\MVPConfDemo\Shared\obj\Debug\net5.0\MVPConfDemo.Shared.AssemblyInfo.cs
+C:\Users\Alexandre Malavasi\source\repos\MVPConfDemo\Shared\obj\Debug\net5.0\MVPConfDemo.Shared.csproj.CoreCompileInputs.cache
+C:\Users\Alexandre Malavasi\source\repos\MVPConfDemo\Shared\obj\Debug\net5.0\MVPConfDemo.Shared.dll
+C:\Users\Alexandre Malavasi\source\repos\MVPConfDemo\Shared\obj\Debug\net5.0\ref\MVPConfDemo.Shared.dll
+C:\Users\Alexandre Malavasi\source\repos\MVPConfDemo\Shared\obj\Debug\net5.0\MVPConfDemo.Shared.pdb
+C:\Users\Alexandre Malavasi\source\repos\MVPConfDemo\Shared\obj\Debug\net5.0\MVPConfDemo.Shared.csproj.AssemblyReference.cache
